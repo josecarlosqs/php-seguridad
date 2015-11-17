@@ -1,13 +1,12 @@
 <?php 
 /**
- * Sistema de Token con validacion de dominio
+ * Sistema de Tokens
  * @version 1.0.0
  * @author José Carlos Quichiz Santome <josec.quichiz@gmail.com>
  * @link https://github.com/josecarlosqs/php-seguridad
  */
 class Token{
 	private $expiracion;
-	private $dominio;
 	
 	/**
 	 * Constructor de la clase.
@@ -62,6 +61,5 @@ class Token{
 		}
 
 	}
-
 }
 ?>

@@ -29,7 +29,7 @@ if(isset($_GET['token'])){
 		}else{
 ?>
 	<p>El token no es valido!!</p>
-	<p>Vuelve a generar uno <a href="token.php">aqui</a></p>
+	<p>Como es ejemplo, puedes volver a generar uno <a href="token.php">aqui</a></p>
 <?php
 		}
 	}
