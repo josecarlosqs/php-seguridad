@@ -1,5 +1,9 @@
 <?php 
-
+/**
+ * @version 1.0.0
+ * @author José Carlos Quichiz Santome <josec.quichiz@gmail.com>
+ * @link https://github.com/josecarlosqs/php-seguridad
+ */
 class Token{
 	private $expiracion;
 	
