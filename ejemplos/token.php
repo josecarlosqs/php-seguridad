@@ -8,8 +8,6 @@ if(isset($_GET['token'])){
 }else{
 	$strToken = $token->generarToken();
 }
-
-
  ?>
 <p>
 	<b>Token generado: </b><?=$strToken;?><br>
@@ -26,6 +24,7 @@ if(isset($_GET['token'])){
 		}elseif ($valToken['respuesta'] === TOKEN_EXPIRADO){
 ?>
 	<p>Tu token expiro!</p>
+	<p>Vuelve a generar uno <a href="token.php">aqui</a></p>
 <?php
 		}else{
 ?>
