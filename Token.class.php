@@ -7,6 +7,7 @@ class Seguridad{
 		session_start();
 		$nuevoToken = md5(microtime());
 		$_SESSION['token'] = $nuevoToken;
+		$_SESSION['token_timestamp'] = time();
 		return $nuevoToken;
 	}
 	public function validarToken($cadena,$regenerar = false){
