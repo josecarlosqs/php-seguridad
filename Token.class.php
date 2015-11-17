@@ -1,11 +1,13 @@
 <?php 
 /**
+ * Sistema de Token con validacion de dominio
  * @version 1.0.0
  * @author José Carlos Quichiz Santome <josec.quichiz@gmail.com>
  * @link https://github.com/josecarlosqs/php-seguridad
  */
 class Token{
 	private $expiracion;
+	private $dominio;
 	
 	/**
 	 * Constructor de la clase.
@@ -45,7 +47,7 @@ class Token{
 	public function validarToken($cadena,$regenerar = false){
 		@session_start();
 		$cadena = filter_var($cadena, FILTER_SANITIZE_EMAIL);
-		if(time() - $_SESSION['token_timestamp'] < $this->expiracion){
+		if(time() - $_SESSION['token_timestamp'] <= $this->expiracion){
 			if($cadena === $_SESSION['token']){
 				if($regenerar === true){
 					return array("respuesta"=>TOKEN_CORRECTO,"token"=>$this->generarToken());
@@ -53,10 +55,10 @@ class Token{
 					return array("respuesta"=>TOKEN_CORRECTO,"token"=>$this->generarToken());
 				}
 			}else{
-				return array("respuesta"=>TOKEN_INCORRECTO);
+				return array("respuesta"=>TOKEN_INCORRECTO,"token"=>"");
 			}
 		}else{
-			return array("respuesta"=>TOKEN_EXPIRADO);
+			return array("respuesta"=>TOKEN_EXPIRADO,"token"=>"");
 		}
 
 	}
