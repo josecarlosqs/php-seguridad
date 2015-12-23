@@ -1,0 +1,10 @@
+{
+	"name": "josecarlosqs/sec",
+	"description": "Librerias de seguridad basica en PHP",
+	"authors": [
+		{"name": "Jose Carlos", "email": "josec.quichiz@gmail.com"}
+	],
+	"autoload": {
+		"files": ["Token.class.php","Filtro.class.php"]
+	}
+}
