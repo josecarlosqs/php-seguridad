@@ -51,7 +51,7 @@ class Token{
 				if($regenerar === true){
 					return array("respuesta"=>TOKEN_CORRECTO,"token"=>$this->generarToken());
 				}else{
-					return array("respuesta"=>TOKEN_CORRECTO,"token"=>$this->generarToken());
+					return array("respuesta"=>TOKEN_CORRECTO);
 				}
 			}else{
 				return array("respuesta"=>TOKEN_INCORRECTO,"token"=>"");
